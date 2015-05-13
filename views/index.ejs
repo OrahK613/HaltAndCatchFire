@@ -1,17 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>My Application</title>
-</head>
-<body>
-    <p>This page was rendered at <%= new Date() %>.</p>
+    <head>
+        <meta charset="utf-8">
+        <title>Game Demo - Orah Kittrell</title>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
 
-    <input id="a" type="number"> + <input id="b" type="number">
+            body {
+                background-color: #ffffff;
+                margin: 0;
+                overflow: hidden;
+                font-family: arial;
+            }
 
-    <input id="add" type="submit" value="Add">
+            #blocker {
 
-    <span id="result"></span>
+                position: absolute;
 
-    <script src="script.js"></script>
-</body>
+                width: 100%;
+                height: 100%;
+			
+                background-color: rgba(0,0,0,0.5);
+				background-image: url('../public/project/images/game.jpg');
+
+            }
+
+            #instructions {
+
+                width: 100%;
+                height: 100%;
+				
+				background-color: rgba(0,0,0,0.7);
+				
+                display: -webkit-box;
+                display: -moz-box;
+                display: box;
+
+                -webkit-box-orient: horizontal;
+                -moz-box-orient: horizontal;
+                box-orient: horizontal;
+
+                -webkit-box-pack: center;
+                -moz-box-pack: center;
+                box-pack: center;
+
+                -webkit-box-align: center;
+                -moz-box-align: center;
+                box-align: center;
+
+                color: #ffffff;
+                text-align: center;
+
+                cursor: pointer;
+
+            }
+
+        </style>
+    </head>
+    <body>
+	
+        <div id="blocker">
+
+            <div id="instructions">
+                <span style="font-size:40px">Click to play</span>
+                <br />
+                (W,A,S,D = Move, SPACE = Jump, MOUSE = Look, CLICK = Shoot)
+            </div>
+
+        </div>
+
+      
+    </body>
 </html>
+<script src="Three.js"></script>	
+<script src="cannon.js"></script>
+<script src="PointerLockControls.js"></script>
+<script src="game.js"></script>
